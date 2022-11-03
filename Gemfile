@@ -51,6 +51,8 @@ gem 'bootsnap', require: false
 # Gem to create env variables
 gem 'figaro'
 
+gem 'foreman'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
