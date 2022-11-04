@@ -17,7 +17,6 @@ const greetingsReducer = (state = [], action = {}) => {
 // Action
 const getGreetings = () => async (dispatch) => {
   const response = await fetch(URL);
-  console.log(response);
   const greeting = await response.json();
   dispatch({
     type: GET_GREETINGS,
