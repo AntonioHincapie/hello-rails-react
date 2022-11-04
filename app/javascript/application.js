@@ -4,12 +4,30 @@ import "./controllers"
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import { Provider } from "react-redux";
+import Home from "./components/home";
+import store from "./redux/store";
+import Greetings from "./components/greetings";
 
 const App = () => {
-  return (<h1>Hello World!</h1>);
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/greeting" element={<Greetings />} />
+      </Routes>
+    </Router>
+  )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
