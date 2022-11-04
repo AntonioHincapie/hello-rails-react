@@ -11,7 +11,7 @@ const Greetings = () => {
 
   useEffect(() => {
     dispatch(getGreetings());
-  }, ['Hi!']);
+  }, []);
 
   return (
     <div>
