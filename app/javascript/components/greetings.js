@@ -6,12 +6,11 @@ import { getGreetings } from "../redux/reducers/greetings";
 
 const Greetings = () => {
   const dispatch = useDispatch();
-  const greeting = useSelector((state) => state.greeting);
-  console.log(greeting);
+  const { greeting } = useSelector((state) => state.greetings);
 
   useEffect(() => {
     dispatch(getGreetings());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
